@@ -36,12 +36,13 @@ jobs:
           pip install flask
           pip install gunicorn
           pip install requests
-          #pip install tensorflow
+          pip install tensorflow==2.0.0
           pip install flask-wtf
           pip install pillow
           pip install flask-bootstrap
           pip install keras==2.3.1
       - name: Script
         run: |
+          python Set PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python
           cd flaskapp
           ./st.sh

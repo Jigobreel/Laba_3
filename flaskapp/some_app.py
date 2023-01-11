@@ -50,12 +50,12 @@ class NetForm(FlaskForm):
   
   submit = SubmitField('send')
   
-  
+print("We entered the 53 line") 
 from werkzeug.utils import secure_filename
 import os
   
 import net as neuronet
-  
+print("We entered the 58 line") 
 @app.route("/net",methods = ['GET','POST'])
 def net():
   form = NetForm()

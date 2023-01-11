@@ -5,10 +5,10 @@ name: Python package
 # Команда, контролирующая запуск сборки
 on:
   # Сборка запускается каждый раз при коммите файлов в папке проекта
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  #push:
+    #branches: [ "main" ]
+  #pull_request:
+    #branches: [ "main" ]
 
   # Позволяет запускать сборку вручную из вкладки Actions
   workflow_dispatch:
@@ -35,12 +35,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install flask
           pip install gunicorn
-          pip install requests
-          pip install flask-bootstrap
-          pip install flask-wtf
-          pip install pillow
-          pip install tensorflow==2.0.1
-          pip install keras
       - name: Script
         run: |
           cd flaskapp

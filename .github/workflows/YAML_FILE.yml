@@ -23,10 +23,10 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v3
-      - name: Set up Python 3.9
+      - name: Set up Python 3.7.6
         uses: actions/setup-python@v4
         with:
-          python-version: 3.9
+          python-version: 3.7.6
           architecture: 'x64'
       - name: Before install
         run: chmod +x ./flaskapp/st.sh
@@ -39,7 +39,7 @@ jobs:
           pip install flask-bootstrap
           pip install flask-wtf
           pip install pillow
-          pip install tensorflow==2.5.0
+          pip install tensorflow==2.0.1
           pip install keras
       - name: Script
         run: |

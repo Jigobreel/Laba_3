@@ -36,6 +36,11 @@ jobs:
           pip install flask
           pip install gunicorn
           pip install requests
+          pip install flask-bootstrap
+          pip install flask-wtf
+          pip install pillow
+          pip install tensorflow==2.0.0-alpha0
+          pip install keras
       - name: Script
         run: |
           cd flaskapp

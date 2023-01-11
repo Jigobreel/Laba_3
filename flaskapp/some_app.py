@@ -1,4 +1,4 @@
-print("Hello world!")
+print("Function some_app started!")
 from flask import Flask
 app = Flask(__name__)
 

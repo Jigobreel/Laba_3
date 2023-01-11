@@ -42,6 +42,7 @@ jobs:
           pip install flask-bootstrap
           pip install keras==2.3.1
           pip install protobuf==3.20.1
+          pip install 'h5py==2.10.0' –force-reinstall
       - name: Script
         run: |
           cd flaskapp

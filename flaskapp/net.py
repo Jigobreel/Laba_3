@@ -18,9 +18,7 @@ ncol=3
 print("We reached 18 line in NET")
 # загружаем и создаем стандартную уже обученную сеть keras
 visible2 = Input(shape=(nh,nw,ncol),name = 'imginp')
-resnet = keras.applications.resnet_v2.ResNet50V2(include_top=True,
-  weights='imagenet', input_tensor=visible2, 
-  input_shape=None, pooling=None, classes=1000, classifier_activation="softmax")
+resnet = keras.applications.resnet_v2.ResNet50V2(include_top=True, weights='imagenet', input_tensor=visible2,  input_shape=None, pooling=None, classes=1000)
 print("We reached 22 line in NET")
 # чтение изображений из каталога
 # учтите, если там есть файлы, не соответствующие изображениям, или каталоги

@@ -2,15 +2,15 @@
 
 name: Python package
 
-# Controls when the workflow will run
+# Команда, контролирующая запуск сборки
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
+  # Сборка запускается каждый раз при коммите файлов в папке проекта
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
-  # Allows you to run this workflow manually from the Actions tab
+  # Позволяет запускать сборку вручную из вкладки Actions
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -28,11 +28,14 @@ jobs:
         with:
           python-version: 3.9
           architecture: 'x64'
+      - name: Before install
+        run: chmod +x ./flaskapp/st.sh
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install flask
-      - name: Display Python version
-        run: python -c "import sys; print(sys.version)"
-      - name: Launching first file
-        run: python flaskapp/some_app.py
+          pip install gunicorn
+      - name: Script
+        run: |
+          cd flaskapp
+          ./st.sh

@@ -36,10 +36,10 @@ jobs:
           pip install flask
           pip install gunicorn
           pip install requests
-          pip install tensorflow
+          #pip install tensorflow
           pip install flask-wtf
           pip install pillow
-          #pip install flask-bootstrap
+          pip install flask-bootstrap
           pip install keras==2.3.1
       - name: Script
         run: |

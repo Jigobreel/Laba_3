@@ -116,6 +116,20 @@ def apinet():
   
   return resp
 
-    
-    
-    
+import lxml.etree as ET
+@app.route("/apixml",methods=['GET','POST'])
+def apixml():
+  #парсим хмл-файл в dom
+  dom = ET.parse("./static/xml/file.xml")
+  #парсим шаблон в dom
+  xslt = ET.parse("./static/xml/file.xslt")
+  #получаем трансформер
+  transform = ET.XSLT(xslt)
+  #преобразуем хмл с помощью трансформера хслт
+  newhtml = transform(dom)
+  #преобразуем из памяти dom в строку. Возможно, нужно будет указать кодировку
+  strfile = ET.tostring(newhtml)
+  return strfile
+
+
+

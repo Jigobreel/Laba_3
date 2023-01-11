@@ -35,6 +35,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install flask
           pip install gunicorn
+          pip install requests
       - name: Script
         run: |
           cd flaskapp

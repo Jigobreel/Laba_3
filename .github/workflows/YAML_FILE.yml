@@ -36,7 +36,7 @@ jobs:
           pip install flask
           pip install gunicorn
           pip install requests
-          pip install tensorflow==2.000-alpha0
+          pip install tensorflow==2.0.0-alpha0
       - name: Script
         run: |
           cd flaskapp

@@ -15,10 +15,11 @@ width = 224
 nh=224
 nw=224
 ncol=3
+print("We reached 18 line in NET")
 # загружаем и создаем стандартную уже обученную сеть keras
 visible2 = Input(shape=(nh,nw,ncol),name = 'imginp')
 resnet = keras.applications.resnet_v2.ResNet50V2(include_top=True, weights='imagenet', input_tensor=visible2, input_shape=None, pooling=None, classes=1000)
-
+print("We reached 22 line in NET")
 # чтение изображений из каталога
 # учтите, если там есть файлы, не соответствующие изображениям, или каталоги
 # возникнет ошибка
@@ -31,7 +32,7 @@ def read_image_files(files_max_count,dir_name):
   for file_i in range(files_count): # читаем изображения в список
     image_box[file_i] = Image.open(dir_name+'/'+files[file_i]) # / ??
   return files_count, image_box
-
+print("We reached 35 line in NET")
 # возвращаем результаты работы нейронной сети
 def getresult(image_box):
   files_count = len(image_box)
@@ -48,5 +49,5 @@ def getresult(image_box):
 # заранее вызываем работу сети, так как работа с gpu требует времени
 # из-за инициализации библиотек
 # возможно, лучше убрать и закомментировать эти строки
-# fcount, fimage = read_image_files(1,'./static')
-# decode = getresult(fimage)
+fcount, fimage = read_image_files(1,'./static')
+decode = getresult(fimage)

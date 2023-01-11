@@ -41,8 +41,8 @@ jobs:
           pip install pillow
           pip install flask-bootstrap
           pip install keras==2.3.1
+          pip install protobuf==3.20.1
       - name: Script
         run: |
-          PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python
           cd flaskapp
           ./st.sh

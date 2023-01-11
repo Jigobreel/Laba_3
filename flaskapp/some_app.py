@@ -49,31 +49,31 @@ class NetForm(FlaskForm):
   submit = SubmitField('send')
   
   
-  from werkzeug.utils import secure_filename
-  import os
+  #from werkzeug.utils import secure_filename
+  #import os
   
-  import net as neuronet
+  #import net as neuronet
   
-  @app.route("/net",methods = ['GET','POST'])
-  def net():
-    form = NetForm()
+  #@app.route("/net",methods = ['GET','POST'])
+  #def net():
+  #  form = NetForm()
     
-    filename = None
-    neurodic = {}
+  #  filename = None
+  #  neurodic = {}
     
-    if form.validate_on_submit():
+  #  if form.validate_on_submit():
       
-      filename = os.path.join('./static', secure_filename(form.upload.data.filename))
-      fcount, fimage = neuronet.read_image_files(10,'./static')
+  #    filename = os.path.join('./static', secure_filename(form.upload.data.filename))
+  #    fcount, fimage = neuronet.read_image_files(10,'./static')
       
-      decode = neuronet.getresult(fimage)
+  #    decode = neuronet.getresult(fimage)
       
-      for elem in decode:
-        neurodic[elem[0][1]] = elem[0][2]
+  #    for elem in decode:
+  #      neurodic[elem[0][1]] = elem[0][2]
         
-      form.upload.data.save(filename)
+  #    form.upload.data.save(filename)
     
-    return render_template('net.html',form=form,image_name=filename,neurodic=neurodic)
+  #  return render_template('net.html',form=form,image_name=filename,neurodic=neurodic)
       
 #from flask import request
 #from flask import Response
